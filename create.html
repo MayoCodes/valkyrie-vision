@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valkyrie Vision</title>
+    <!-- Google Fonts Link For Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="create.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="images/img trial two.png" alt="logo">
+                <h2>Valkyrie Vision</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portal.html">Portal</a></li>
+                <li><a href="create.html">Create</a></li>
+                <li><a href="backend.html">Backend</a></li>
+                <li><a href="apply.html">Apply</a></li>
+            </ul>
+            <button class="login-btn" id="login__">LOG IN</button>
+
+            <div class="action">
+                <div class="profile" onclick="menuToggle();">
+                    <img src="images/avatar.jpg" alt="Profile Picture" />
+                </div>
+                <div class="menu">
+                    <h3 id="publicName">Not Found<br><h4 id="publicRole" style="text-align: center;">Not Found</h4></h3>
+                    <ul>
+                        <li><a href="#" id="email_">Email</a></li>
+                        <li><a onclick="signOut();">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        <div class="form">
+            <div class="title">Create a Listing</div>
+            <div class="subtitle">Let’s open the doors to new opportunities! Please fill out your listing name, description, and photo.</div>
+            <div class="input-container ic1">
+                <input id="lt" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="lt" class="placeholder">Listing Title</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="shortdesc" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="shortdesc" class="placeholder">Short Description</label>
+            </div>
+            <div class="file-drop-area">
+                <span class="fake-btn">Choose files</span>
+                <span class="file-msg">or drag and drop files here</span>
+                <input class="file-input" type="file" id="atharva" multiple>
+              </div>
+            <button type="button" class="submit" onclick="handleButtonClick3()">Submit</button>
+        </div>
+        <div class="blur-bg-overlay"></div>
+        <div class="form-popup">
+            <span class="close-btn material-symbols-rounded">close</span>
+            <div class="form-box login">
+                <div class="form-details">
+                    <h2>Welcome Back</h2>
+                    <p>Please log in using your personal information to stay connected with us.</p>
+                </div>
+                <div class="form-content">
+                    <h2>LOGIN</h2>
+                    <form action="#">
+                        <div class="input-field">
+                            <input type="text" id="email1-entr" autocomplete="off" required>
+                            <label for="email1-entr">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="password1-entr" autocomplete="off" required>
+                            <label for="password1-entr">Password</label>
+                        </div>
+                        <a href="#" class="forgot-pass-link">Forgot password?</a>
+                        <button type="submit" id="login">Log In</button>
+                    </form>
+                    <div class="bottom-link">
+                        Don’t have an account?
+                        <a href="#" id="signup-link">Signup</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-box signup">
+                <div class="form-details">
+                    <h2>Create Account</h2>
+                    <p>To become a part of our community, please sign up using your personal information.</p>
+                </div>
+                <div class="form-content">
+                    <h2>SIGNUP</h2>
+                    <form action="#">
+                        <div class="input-field">
+                            <input type="text" id="name-entr" autocomplete="off" required>
+                            <label for="name-entr">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="email-entr" autocomplete="off" required>
+                            <label for="email-entr">Enter your email</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="password-entr" autocomplete="off" required>
+                            <label for="password-entr">Create password</label>
+                        </div>
+                        <div class="policy-text">
+                            <label for="role">Select Role:</label>
+                            <select id="role">
+                                <option value="employer">Employer</option>
+                                <option value="gc">Guidance Counselor</option>
+                                <option value="student">Student</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="fetch-button">Sign Up</button>
+                    </form>
+                    <div class="bottom-link">
+                        Already have an account?
+                        <a href="#" id="login-link">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="create.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>
