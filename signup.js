@@ -80,7 +80,7 @@ async function handleButtonClick1() {
     }
 
     try {
-        // Fetch data from the 'profile' table
+
         const { data: profileEntries, error: fetchError } = await supabase.from('profile').select();
 
         if (fetchError) {
@@ -88,15 +88,14 @@ async function handleButtonClick1() {
             return;
         }
 
-        // Find the user in the fetched data
+
         const user = profileEntries.find(
             (entry) => entry.email === emailLog && entry.password === pswrdLog
         );
 
         if (user) {
-            // Save user data to local storage
             localStorage.setItem("name", user.name);
-            localStorage.setItem("pfpid", user.pfpID); // Note the case of 'pfpid' vs. 'pfpID'
+            localStorage.setItem("pfpid", user.pfpID); 
             localStorage.setItem("email", user.email);
             localStorage.setItem("role", user.role);
             location.reload();
@@ -125,6 +124,6 @@ async function signOut() {
 }
 
 
-// Attach event listener to the button
+
 document.getElementById('fetch-button').addEventListener('click', handleButtonClick);
 document.getElementById('login').addEventListener('click', handleButtonClick1);

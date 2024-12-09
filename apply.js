@@ -9,7 +9,9 @@
       alert('Invalid or missing ID in the URL. Please check the URL and try again.');
       return;
     }
-    emailjs.init('pYkQUjYl0_Bqqmgcj'); // Replace YOUR_PUBLIC_KEY with your actual key
+    emailjs.init({
+        publicKey: "J7PUkV7gPzR2ksuxC",
+      }); // Replace YOUR_PUBLIC_KEY with your actual key
 
 
     const articleId = parseInt(urlHash, 10); // Convert hash part to an integer
@@ -37,13 +39,12 @@
       }
   
       // Step 5: Send an email using emailjs (replace with your emailjs user ID, service ID, and template ID)
-      const emailjsResponse = await emailjs.send('service_e589tr9', 'template_p2pwexe', {
-        to_email: auth_email,
-        message: messageContent,
+      const emailjsResponse = await emailjs.send("service_obrhlbd","template_icmr6sp",{
         from_name: localStorage.getItem("name"),
+        message: messageContent,
         reply_to: localStorage.getItem("email"),
-        to_name: author
-      });
+        to_email: auth_email,
+        });
   
       if (emailjsResponse.status === 200) {
         console.log('Email sent successfully');

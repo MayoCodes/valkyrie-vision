@@ -33,9 +33,9 @@ async function checkForUnapproved() {
         }
 
         const row = data[0];
-        currentRowId = row.id; // Store the ID of the current row
+        currentRowId = row.id; 
 
-        // Display row details (modify as needed for your UI)
+        
         const titlea = document.getElementById("dtitle"); 
         const desca = document.getElementById("ddesc"); 
 
@@ -48,7 +48,7 @@ async function checkForUnapproved() {
     }
 }
 
-// Function to approve the current row
+
 async function approveRow() {
     if (!currentRowId) {
         alert('No row selected to approve.');
@@ -102,7 +102,7 @@ async function denyRow() {
     }
 }
 
-// Event listeners for buttons
+
 
 document.getElementById('approve').addEventListener('click', approveRow);
 document.getElementById('deny').addEventListener('click', denyRow);
